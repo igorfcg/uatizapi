@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapi.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f2eadf;
+}
+.corpo_lista
+{
+    position: relative;
+    width: 340px;
+    height: 600px;
+    background-color: #f0e68c;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+header
+{
+    display: flex;
+    position: relative;
+    background-color: #daa520;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+header .Logo
+{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+header  .acoes 
+{
+    display: flex;
+    position: relative;
+    gap:15px;
+} 
+header  .acoes a
+{
+    display: flex;
+    text-decoration: none;
+    color:#fff;
+    font-size: 1.5em;
+}
+.abas input
+{
+    visibility: hidden;
+    display: none;
+}
+.buttons
+{
+    display: flex;
+    position: relative;
+    background-color: #b8860B;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+.buttons label
+{
+    width: 33.33%;
+    color: #fff;
+    opacity: 0.75;
+    text-align: center;
+    padding: 5px 0;
+    font-weight: 700;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+.abas input:nth-child(1):checked ~ .buttons label:nth-child(1),
+.abas input:nth-child(2):checked ~ .buttons label:nth-child(2),
+.abas input:nth-child(3):checked ~ .buttons label:nth-child(3)
+{
+    opacity: 1;
+}
+.underline
+{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 33.333%;
+    background-color:#fff;
+    transition: 0.5s;
+}
+.abas input:nth-child(1):checked ~ .buttons .underline
+{
+    left: 0;
+}
+.abas input:nth-child(2):checked ~ .buttons .underline
+{
+    left: 33.333%;
+}
+.abas input:nth-child(3):checked ~ .buttons .underline
+{
+    left: 66.778%;
+}
+.content
+{
+    display: flex;
+    position: relative;
+    width: calc(340px * 3);
+    transition: 0.5s;
+    overflow: hidden;
+}
+.content .box
+{
+    position: relative;
+    width: 340px;
+}
+.abas input:nth-child(1):checked ~ .content
+{
+    left: calc(340px * 0);
+}
+.abas input:nth-child(2):checked ~ .content
+{
+    left: calc(340px * -1);
+}
+.abas input:nth-child(3):checked ~ .content
+{
+    left: calc(340px * -2);
+}
+.content .data
+{
+    position: relative;
+    width: 100%;
+    height: 510px;
+}
+.chatlist
+{
+    position:relative;
+    height: 100%;
+    overflow-y: auto;
+}
+.chatlist .block
+{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    gap: 10px;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+.chatlist .block:hover
+{
+    background-color: #cfc67a;
+}
+.chatlist .block .imgbx
+{
+    position: relative;
+    width: 99px;
+    min-width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 100%;
+}
+.chatlist .block .imgbx img
+{
+    position: relative;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.chatlist .block .details
+{
+    position: relative;
+    width: 100%;
+}
+.chatlist .block .details .listHead
+{
+    display: flex;
+    justify-content: space-between;
+}
+.chatlist .block .details .listHead h4
+{
+    font-size:1em;
+    width: 100%;
+    font-weight: 600;
+    color: #000;
+}
+.chatlist .block .details .listHead .time
+{
+    font-size: 0.75em;
+    color: #555;
+    padding-right: 5px;
+
+}
+.msg_resumida
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.chatlist .block .details p
+{
+    display: -webkit-box;
+    color:#555
+    -webkit-line-clamp: 1;
+    font-size: 0.9em;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.chatlist .block.unred .details .listHead .time
+{
+    color: #000;
+    padding-right: 5px;
+}
+.chatlist .block.unred .details p
+{
+    color:#000;
+    font-weight: 600;
+
+}
+::-webkit-scrollbar
+{
+    width: 5px;
+}
+::-webkit-scrollbar-track
+{
+    background: transparent;
+}
+::-webkit-scrollbar-thumb
+{
+    background: #bbb;
+}
